@@ -1,0 +1,10 @@
+# The slash is necessary
+/*
+!.gitignore
+
+!lxqt/
+!openbox/
+!qterminal.org
+# !pcmanfm-qt/lxqt/settings.conf
+!pcmanfm-qt/
+pcmanfm-qt/lxqt/settings.conf.lock
