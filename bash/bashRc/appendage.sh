@@ -3,16 +3,11 @@
 
 myDir="$(readlink -f "$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)")"
 
-mkcd ()
-{
-    mkdir -p -- "$1" &&
-    cd -P -- "$1"
-}
+source $myDir/funcs.sh
 
 #════════════════════════════  Apply  ════════════════════════════
 
-e='\[\033[' # Escape sequence
-export PS1="${e}95m\]\u${e}91m\]@${e}96m\]\h:${e}94m\]\w${e}93m\]$ ${e}0m\]"
+setPromptStyle
 
 #════════════════════════════  Aliases  ════════════════════════════
 
