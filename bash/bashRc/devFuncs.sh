@@ -18,7 +18,7 @@ pyVenv() {
     if [ ! -d ".venv" ]; then
       echo ".venv not found"
       echo "Creating it ..."
-      python3 -m pip install --upgrade pip
+      # python3 -m pip install --upgrade pip
       python3 -m venv .venv
     else
       echo ".venv found"
