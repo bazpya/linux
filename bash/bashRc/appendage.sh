@@ -49,9 +49,7 @@ alias gitWindowTab='echo -ne "\033]0;$(basename `git rev-parse --show-toplevel`)
 alias daze='date +"year: %Y, month: %m, day: %d, hours: %H, minutes: %M" | tee /dev/tty | tr -d "\n" | clip.exe'
 
 alias d="docker container ls -a --format 'table{{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Ports}}'"
-alias dockeru="docker-compose up -d"
-alias dockerd="docker-compose down"
-alias dockers="docker stop"
+alias drm="docker rm -v -f \$(docker ps -qa)"  # clean out all containers
 
 alias hmswitch="home-manager switch --flake ."
 alias nixswitch="sudo nixos-rebuild switch --flake ."
