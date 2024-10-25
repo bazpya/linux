@@ -1,4 +1,3 @@
-
 #════════════════════════════  Defs  ════════════════════════════
 
 myDir="$(readlink -f "$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)")"
@@ -25,6 +24,10 @@ alias .5='cd ../../../../..'
 alias .6='cd ../../../../../..'
 alias .7='cd ../../../../../../..'
 
+alias daze='date +"year: %Y, month: %m, day: %d, hours: %H, minutes: %M" | tee /dev/tty | tr -d "\n" | clip.exe'
+
+#══════════════ git ══════════════
+
 alias g='git status && gitWindowTab'
 alias giff='git diff'
 alias gadd='git add'
@@ -46,13 +49,10 @@ alias gitChmod='gitFilenamesPipe chmod -x && gitFilenamesPipe ll'
 alias gitBranchNamesPipe='git for-each-ref refs/heads --format="%(refname:short)" | xargs '
 alias gitWindowTab='echo -ne "\033]0;$(basename `git rev-parse --show-toplevel`)\a"'
 
-alias daze='date +"year: %Y, month: %m, day: %d, hours: %H, minutes: %M" | tee /dev/tty | tr -d "\n" | clip.exe'
+#══════════════ docker ══════════════
 
 alias d="docker container ls -a --format 'table{{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Ports}}'"
-alias drm="docker rm -v -f \$(docker ps -qa)"  # clean out all containers
-
-alias hmswitch="home-manager switch --flake ."
-alias nixswitch="sudo nixos-rebuild switch --flake ."
+alias drm="docker rm -v -f \$(docker ps -qa)" # clean out all containers
 
 #════════════════════════════  Navigate  ════════════════════════════
 
