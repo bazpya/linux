@@ -51,8 +51,16 @@ alias gitWindowTab='echo -ne "\033]0;$(basename `git rev-parse --show-toplevel`)
 
 #══════════════ docker ══════════════
 
-alias d="docker container ls -a --format 'table{{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Ports}}'"
-alias drm="docker rm -v -f \$(docker ps -qa)" # clean out all containers
+# list containers nicely formatted
+alias dlsc="docker container ls -a --format 'table{{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Ports}}'"
+# list images nicely formatted
+alias dlsi="docker image ls --format 'table{{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.Size}}'"
+# delete all containers
+alias drmc="docker rm -vf \$(docker ps -qa)"
+# delete all images
+alias drmi="docker rmi -f \$(docker images -qa)"
+# delete all containers and images (both dangling and unused)
+alias dprune="docker system prune -a -f"
 
 #════════════════════════════  Navigate  ════════════════════════════
 
