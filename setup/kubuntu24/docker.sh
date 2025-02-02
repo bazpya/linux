@@ -16,6 +16,9 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 echo "Don't try to install Docker Desktop on a Linux machine"
 echo "There's no need really"
 echo "The CLI is enough for all purposes on a Linux machine"

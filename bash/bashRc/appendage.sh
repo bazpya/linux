@@ -64,5 +64,8 @@ alias dprune="docker system prune -a -f"
 
 #════════════════════════════  Navigate  ════════════════════════════
 
+# enable SSH agent
+# eval "$(ssh-agent -s)"
+
 export proj=$HOME/proj
 # cd $proj  # Terminal instances inside VSCode will also navigate which breaks your debugging
