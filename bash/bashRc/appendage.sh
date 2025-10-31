@@ -66,6 +66,7 @@ alias dprune="docker system prune -a -f"
 
 # enable SSH agent
 # eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/bazGithub
 
 export proj=$HOME/proj
 # cd $proj  # Terminal instances inside VSCode will also navigate which breaks your debugging
